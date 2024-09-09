@@ -27,7 +27,7 @@ const GptSearchBar = () => {
 			const movies = await data.json();
 			return movies.results;
 		} catch (err) {
-			console.log("error");
+			console.error("Error in TMDB Movie Search: ", err);
 		}
 	};
 
@@ -40,19 +40,35 @@ const GptSearchBar = () => {
 					gptSearchMovies: null,
 				})
 			);
+
 			const query =
 				"Act as a Movie Recommendation system and suggest some movies for the query : " +
 				searchText.current.value +
-				". only give me names of 5 movies, comma separated like the example result given ahead. Example is : Koi mil gya, Hera feri, Kabhi kushi kabhi gam, Dilwale, Dune";
+				". Only give me names of 5 movies, comma-separated like the example result given ahead. Example is : Koi mil gya, Hera feri, Kabhi kushi kabhi gam, Dilwale, Dune";
+			
+			// Call OpenAI API for GPT response
 			const gptSearch = await openai.chat.completions.create({
 				messages: [{ role: "user", content: query }],
 				model: "gpt-3.5-turbo",
 			});
-			const getMovies = gptSearch.choices[0].message.content.split(",");
+
+			// Debugging the GPT search result
+			console.log("GPT Response: ", gptSearch);
+
+			const getMovies = gptSearch.choices[0]?.message?.content.split(",");
+			if (!getMovies) {
+				throw new Error("No movies found in GPT response");
+			}
+
+			// Trim spaces and fetch each movie from TMDB
 			const promisesMovies = getMovies.map((movie) =>
 				handletmdbMoviesSearch(movie.trim())
 			);
+
+			// Wait for all promises to resolve
 			const tmdbMoviesSearch = await Promise.all(promisesMovies);
+			
+			// Dispatch the results to Redux
 			dispatch(
 				setGptMoviesSearch({
 					gptSearchNames: getMovies,
@@ -60,10 +76,11 @@ const GptSearchBar = () => {
 				})
 			);
 		} catch (err) {
-			console.error("Please try again in 20s.");
-			alert("Please try again in 20s.");
+			console.error("Error in GPT Movies Search: ", err);
+			alert("Please try again in 20 seconds. If the problem persists, check your network connection or API limits.");
 		}
 	};
+
 	return (
 		<>
 			<div className="h-28 sm:h-32 md:h-40"></div>
@@ -80,7 +97,7 @@ const GptSearchBar = () => {
 					/>
 					<button
 						className="col-span-3 rounded-r-full bg-red-700 hover:border-red-800 active:bg-red-900 outline-none"
-						onClick={() => handleGptMoviesSearch()}
+						onClick={handleGptMoviesSearch}
 					>
 						{lang[langCode].search}
 					</button>
