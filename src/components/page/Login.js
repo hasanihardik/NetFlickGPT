@@ -11,7 +11,7 @@ import {
 	signInWithEmailAndPassword,
 	updateProfile,
 } from "firebase/auth";
-import { oauth } from "../../utils/firebase.js";
+import { auth } from "../../utils/firebase.js";
 import { addUser } from "../../utils/slices/userSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../Footer.js";
@@ -22,7 +22,7 @@ import { setForgotPass } from "../../utils/slices/configSlice.js";
 import ForgotPass from "../subComponents/ForgotPass.js";
 
 const Login = () => {
-	const [issignIn, setIsSignIn] = useState(true);
+	const [isSignIn, setIsSignIn] = useState(true);
 	const [errorMsg, setErrorMsg] = useState(null);
 	const [passwordType, setPasswordType] = useState(true);
 	const [name, setName] = useState("");
