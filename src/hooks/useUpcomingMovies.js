@@ -1,4 +1,3 @@
-import { MOVIES_OPTIONS } from "../utils/constants/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addUpcomingMovies } from "../utils/slices/moviesSlice";
 import { useEffect } from "react";
@@ -9,8 +8,14 @@ const useUpcomingMovies = () => {
 	const getUpcomingMovies = async () => {
 		try {
 			const response = await fetch(
-				"https://api.themoviedb.org/3/movie/upcoming?page=1",
-				MOVIES_OPTIONS
+				"https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
+				{
+					method: 'GET',
+					headers: {
+						accept: 'application/json',
+						Authorization: `Bearer ${process.env.REACT_APP_TMDB_ACCESS_TOKEN}`
+					}
+				}
 			);
 			const json = await response.json();
 			dispatch(addUpcomingMovies(json.results));

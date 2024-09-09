@@ -5,13 +5,14 @@ export const APP_LOGO =
 export const AVATAR_LOGO =
 	"https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png";
 
-export const MOVIES_OPTIONS = {
-	method: "GET",
-	headers: {
-		accept: "application/json",
-		Authorization: "Bearer " + process.env.REACT_APP_MOVIES_OPTIONS,
-	},
-};
+	export const MOVIES_OPTIONS = {
+		method: "GET",
+		headers: {
+		  accept: "application/json",
+		  Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+		},
+	  };
+	  
 
 export const CDN_IMG_URL = "https://image.tmdb.org/t/p/w500/";
 

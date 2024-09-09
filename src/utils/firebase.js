@@ -11,9 +11,9 @@ import { getAuth } from "firebase/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
 	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-	authDomain: "netflickgpt-ef49c.firebaseapp.com",
-	projectId: "netflickgpt-ef49c",
-	storageBucket: "netflickgpt-ef49c.appspot.com",
+	authDomain: "netflix-gpt-jack.firebaseapp.com",
+	projectId: "netflix-gpt-jack",
+	storageBucket: "netflix-gpt-jack.appspot.com",
 	messagingSenderId: process.env.REACT_APP_FIREBASE_MSGSEND_ID,
 	appId: process.env.REACT_APP_FIREBASE_APP_ID,
 	measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,

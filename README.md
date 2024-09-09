@@ -1,70 +1,213 @@
-# Getting Started with Create React App
+# Netflix-GPT: Your Ultimate Movie Companion! 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <b style="color: blue;  ">Visitor count</b>
+  <br>
+  <a style="" href="https://github.com/akashdeep023">
+  <img src="https://profile-counter.glitch.me/netflix-gpt/count.svg" />
+  </a>
+</p>
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+-   [Project Overview](#project-overview)
+-   [Technologies & Packages Used](#technologies--packages-used)
+-   [Key Features](#key-features)
+-   [Behind the Scenes](#behind-the-scenes)
+-   [Getting Started](#getting-started)
+-   [Acknowledgments](#acknowledgments)
+-   [Author](#author)
+-   [Project Link](#project-link)
+-   [Thank You](#thank-you)
+-   [Creating a Netflix-gpt project involves several steps](#creating-a-netflix-gpt-project-involves-several-steps)
+-   [Ex- Image](#ex--image)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Greetings, movie lovers! 👋 Welcome to Netflix-GPT, a state-of-the-art movie recommendation website powered by the GPT (Generative Pre-trained Transformer) model and Firebase.
 
-### `npm test`
+## Technologies & Packages Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   **React:** Powering the interactive and user-friendly interface.
+-   **Firebase:** Handling user authentication, data storage, and more.
+-   **OpenAI:** Leveraging the GPT model for sophisticated movie recommendations.
+-   **React Router DOM:** Enabling smooth navigation and user-friendly routing.
+-   **React-Redux:** Managing application state efficiently.
+-   **React-Toastify:** Adding beautiful notifications for enhanced user interaction.
+-   **Tailwind CSS:** Crafting a visually appealing and responsive design.
 
-### `npm run build`
+## Key Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   **Dynamic Recommendations:** Leverage advanced machine learning for personalized movie suggestions based on your viewing history.
+-   **Account Management:** Seamlessly update your profile, delete your account, and reset your password.
+-   **Smart Search:** Effortlessly find movies by title, actor, or genre with real-time updates as you type.
+-   **Responsive Design:** Enjoy a seamless experience across all devices, from desktops to smartphones.
+-   **Login with Email or Password:** Securely access personalized movie recommendations by logging in with your email and password.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Behind the Scenes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   **React:** Powering the interactive and user-friendly interface.
+-   **Firebase:** Managing user authentication, data storage, and more.
+-   **OpenAI:** Leveraging the GPT model for sophisticated movie recommendations.
+-   **React Parcel:** Streamlining bundling, fast refresh, JSX support, and code splitting.
+-   **React Router DOM:** Facilitating smooth navigation and user-friendly routing.
+-   **React-Toastify:** Incorporating beautiful notifications for enhanced user interaction.
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Follow these steps to get started with Netflix-GPT:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/akashdeep023/Netflix_Gpt.git
+    cd Netflix_Gpt
+    ```
+2.  **Install Dependencies:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```bash
+    npm install
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3.  **Set Up Environment Variables:**
 
-## Learn More
+    Configure the following environment variables by creating a .env file in the root of your project:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    REACT_APP_MOVIES_OPTIONS=
+    REACT_APP_OPENAI_KEY=
+    REACT_APP_FIREBASE_API_KEY=
+    REACT_APP_FIREBASE_MESSAGING_SENDER_ID=
+    REACT_APP_FIREBASE_APP_ID=
+    REACT_APP_FIREBASE_MEASUREMENT_ID=
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Replace the values with your specific configurations.
 
-### Code Splitting
+4.  **Run the Application:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    ```bash
+    npm start
+    ```
 
-### Analyzing the Bundle Size
+5.  **Open in Your Browser:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Open http://localhost:3000 in your web browser.
 
-### Making a Progressive Web App
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Special thanks to Akshay Saini 🚀 for his invaluable guidance. His teaching approach, fostering curiosity and a deep understanding of each line of code, has played a pivotal role in my learning experience. Kudos! 🙌🌈
 
-### Advanced Configuration
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Akash Deep \
+Email: contact.akashdeep023@gmail.com \
+LinkedIn : https://www.linkedin.com/in/akashdeep023/
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Thank You
 
-### `npm run build` fails to minify
+Thank you for exploring Netflix-GPT! Your feedback is valuable. If you have any suggestions or thoughts, feel free to share them with us. 😊
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+---
+
+## Creating a Netflix-gpt project involves several steps
+
+-   Create React App
+-   Configured TailwindCSS
+-   Header
+-   Routing of App
+-   Login Form
+-   Sign up Form
+-   Form Validation
+-   useRef Hook
+-   Firebase Setup
+-   Deploying our app to production
+-   Create SignUp/SignIn User Account
+-   Implement Sign In user Api
+-   Created Redux Store with userslice
+-   Implemented Sign out
+-   Update Profile
+-   BugFix: Sign up user displayName and profile picture update
+-   BugFix: if the user is not logged in Redirect /browse to Login Page and vice-versa
+-   Unsubscibed to the onAuthStateChanged callback
+-   Add hardcoded values to the constants file
+-   Regiter TMDB API & create an app & get access token
+-   Get Data from TMDB now playing movies List API
+-   Custom Hook for Now Playing Movies
+-   Create movieSlice
+-   Update Store with movies Data
+-   Planning for MainContauiner & secondary container
+-   Fetch Data for Trailer Video
+-   Update Store with Trailer Video Data
+-   Embedded the Yotube video and make it autoplay and mute
+-   Tailwind Classes to make Main Container Look awesome
+-   Create Some Custom Hook for Movies
+-   Update moviesSlice
+-   Update Store with new movies Data
+-   Create Secondary container
+-   Add some styles
+
+---
+
+## Ex- Image
+
+**SignUp Page**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/ccd57bba-87ff-4d6b-a5a7-14695c2318a3)
+
+**LogIn Page**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/dd8738b3-daa1-43b5-a9b0-54cc2bd7c89c)
+
+**Footer Page**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/b1c08d9a-757d-4564-87bd-895d617903d5)
+
+**Multilanguage Feature**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/ac186b0b-a83a-4adb-9512-1a4de0d8475f)
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/9a88d675-3dff-46f8-a1a1-5b3e812ce6b5)
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/b75acc64-dab1-4eba-9b42-135aa6ee4243)
+
+**Home Page**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/54296d7f-6c0a-41c4-a7b0-2bee39a3e283)
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/a31589b1-ecf4-466f-8a71-f1e1b6436d45)
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/cbefe1a3-d66b-49a9-8c60-a82dad4b62e1)
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/22ce7f07-33ae-498b-b923-f8cd21172cdd)
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/0f1cf49d-05b7-4ed5-89ca-edd6f7437dc8)
+
+**Search Page**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/97d1727c-48ca-4d00-9434-4f0f783c7c99)
+
+**Movie InfoBox**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/345a2ec9-d024-4ee4-9488-085a48685569)
+
+**Movie Trailer**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/222b1b2a-d640-452f-a946-95c98c84553a)
+
+**Confirmation Box**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/17e9375b-70ec-462b-b5a1-688a001f480a)
+
+**Forgot Password Box**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/cc2c4cb4-688e-453a-a2ef-1febd66c6abf)
+
+**Alert Msg**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/2d48f013-e951-4dc7-a902-baaeb52e4dac)
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/4715919b-7f15-47af-9a70-d7296c169f36)
+
+**Shimmer**
+
+![image](https://github.com/akashdeep023/Netflix_Gpt/assets/126412088/85499720-c162-47f4-b730-1f7f35db0ad4)
+
+### Thanks for visit... 😊😊😊

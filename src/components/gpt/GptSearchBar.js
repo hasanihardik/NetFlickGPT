@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import lang from "../../utils/constants/langConstants";
 import { useDispatch, useSelector } from "react-redux";
 import openai from "../../utils/openai";
-import { MOVIES_OPTIONS } from "../../utils/constants/constants";
 import {
 	setGptMoviesSearch,
 	setGptSearchBtnClicked,
@@ -17,12 +16,18 @@ const GptSearchBar = () => {
 		try {
 			const data = await fetch(
 				`https://api.themoviedb.org/3/search/movie?query=${movie}&include_adult=false&language=en-US&page=1`,
-				MOVIES_OPTIONS
+				{
+					method: 'GET',
+					headers: {
+						accept: 'application/json',
+						Authorization: `Bearer ${process.env.REACT_APP_TMDB_ACCESS_TOKEN}`,
+					},
+				}
 			);
 			const movies = await data.json();
 			return movies.results;
 		} catch (err) {
-			console.error(err);
+			console.log("error");
 		}
 	};
 
@@ -38,14 +43,14 @@ const GptSearchBar = () => {
 			const query =
 				"Act as a Movie Recommendation system and suggest some movies for the query : " +
 				searchText.current.value +
-				". only give me names of 5 movies, comma seperated like the example result given ahead. Example is : Koi mil gya, Hera feri, Kabhi kushi kabhi gam, Dilwale, Dune";
+				". only give me names of 5 movies, comma separated like the example result given ahead. Example is : Koi mil gya, Hera feri, Kabhi kushi kabhi gam, Dilwale, Dune";
 			const gptSearch = await openai.chat.completions.create({
 				messages: [{ role: "user", content: query }],
 				model: "gpt-3.5-turbo",
 			});
 			const getMovies = gptSearch.choices[0].message.content.split(",");
 			const promisesMovies = getMovies.map((movie) =>
-				handletmdbMoviesSearch(movie)
+				handletmdbMoviesSearch(movie.trim())
 			);
 			const tmdbMoviesSearch = await Promise.all(promisesMovies);
 			dispatch(
@@ -62,7 +67,7 @@ const GptSearchBar = () => {
 	return (
 		<>
 			<div className="h-28 sm:h-32 md:h-40"></div>
-			<div className=" flex justify-center sticky  top-[70px] md:top-20 z-30 px-2 sm:p-0">
+			<div className="flex justify-center sticky top-[70px] md:top-20 z-30 px-2 sm:p-0">
 				<form
 					className="grid grid-cols-12 w-full sm:w-[70%] md:w-[50%] bg-black/60 p-3 rounded-full font-normal text-base sm:text-lg"
 					onSubmit={(e) => e.preventDefault()}

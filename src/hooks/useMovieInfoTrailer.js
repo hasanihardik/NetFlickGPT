@@ -1,17 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addMovieInfoTrailer } from "../utils/slices/moviesSlice";
-import { MOVIES_OPTIONS } from "../utils/constants/constants";
 
 const useMovieInfoTrailer = (videoId) => {
 	const dispatch = useDispatch();
 	const getVideo = async () => {
 		try {
 			const response = await fetch(
-				"https://api.themoviedb.org/3/movie/" +
-					videoId +
-					"/videos?language=en-US",
-				MOVIES_OPTIONS
+				`https://api.themoviedb.org/3/movie/${videoId}/videos?language=en-US`,
+				{
+					method: 'GET',
+					headers: {
+						accept: 'application/json',
+						Authorization: `Bearer ${process.env.REACT_APP_TMDB_ACCESS_TOKEN}`
+					}
+				}
 			);
 			const data = await response.json();
 			const filterData = data.results?.filter(
