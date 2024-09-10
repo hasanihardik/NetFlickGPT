@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import lang from "../../utils/constants/langConstants";
 import { useDispatch, useSelector } from "react-redux";
-import openai from "../../utils/openai";
+import openai from "../../utils/openai"; // Ensure this file is properly set up for OpenAI API
 import {
 	setGptMoviesSearch,
 	setGptSearchBtnClicked,
@@ -12,6 +12,7 @@ const GptSearchBar = () => {
 	const searchText = useRef(null);
 	const dispatch = useDispatch();
 
+	// TMDB Movie Search
 	const handletmdbMoviesSearch = async (movie) => {
 		try {
 			const data = await fetch(
@@ -31,8 +32,10 @@ const GptSearchBar = () => {
 		}
 	};
 
+	// GPT Movie Search
 	const handleGptMoviesSearch = async () => {
 		try {
+			// Reset search state
 			dispatch(setGptSearchBtnClicked());
 			dispatch(
 				setGptMoviesSearch({
