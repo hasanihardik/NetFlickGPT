@@ -1,4 +1,8 @@
 # NetflickGPT : Integrated AI with netflix
 
-Used TMDB API, Typescript, OpenAI, React for
-this project !!!
+Tech Used:
+Typescript
+React
+TailwindCSS
+TMDB API
+OPENAI API
